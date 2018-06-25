@@ -32,11 +32,12 @@ define(
                     addToCartData = customerData.get('addtocart-confirm');
 
 
-                self.observe('productImageHtml successMessage');
+                self.observe('productImageHtml productName successMessage productSku');
 
                 addToCartData.subscribe(function (updatedAddToCart) {
                     console.log(updatedAddToCart);
                     self.productImageHtml(updatedAddToCart.product_image_html)
+                        .productName(updatedAddToCart.product_name)
                         .successMessage(updatedAddToCart.success_message)
                         .productSku(updatedAddToCart.product_sku)
                     self.showModal();
