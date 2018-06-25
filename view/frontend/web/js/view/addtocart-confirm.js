@@ -37,7 +37,8 @@ define(
                 addToCartData.subscribe(function (updatedAddToCart) {
                     console.log(updatedAddToCart);
                     self.productImageHtml(updatedAddToCart.product_image_html)
-                        .successMessage(updatedAddToCart.success_message);
+                        .successMessage(updatedAddToCart.success_message)
+                        .productSku(updatedAddToCart.product_sku)
                     self.showModal();
                 }, this);
 

@@ -53,6 +53,7 @@
          return [
              'product_image_html' => $this->getImage($product, 'product_page_image_medium')->toHtml(),
              'product_name' => $product->getName(),
+             'product_sku' => $product->getSku(),
              'success_message' => __(
                  'You added %1 to your shopping cart.',
                  $product->getName()
