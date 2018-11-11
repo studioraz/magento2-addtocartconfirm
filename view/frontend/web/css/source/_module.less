@@ -1,8 +1,8 @@
-// /**
-//  * Copyright © 2016 Studio Raz. All rights reserved.
-//  * For more information contact us at dev@studioraz.co.il
-//  * See COPYING_STUIDORAZ.txt for license details.
-//  *
+/**
+ * Copyright © 2018 Studio Raz. All rights reserved.
+ * For more information contact us at dev@studioraz.co.il
+ * Created by Denys (denys@studioraz.co.il)
+ */
 // Add to cart confirmation popup HTML markup
 /***
 <aside class="modal-popup popup-addtocart-confirm modal-slide _inner-scroll _show"
@@ -29,61 +29,37 @@
     <div data-role="focusable-end" tabindex="0"></div>
 </aside>
 ***/
-@import 'module/_extend.less';
-
-//
-//  Variables
-//  _____________________________________________
-
-//
-//    Common
-//--------------------------------------
-& when (@media-common = true) {
-
-}
-
-//
-//  Desktop
-//  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @modal-popup-breakpoint-screen__m) {
-  .popup-addtocart-confirm {
-    .modal-inner-wrap {
-      max-width:360px;
-    }
-    .modal-header,
-    .modal-content,
-    .modal-footer {
-      padding-left:2rem;
-      padding-right:2rem;
+    .popup-addtocart-confirm {
+        .modal-inner-wrap {
+            max-width: 360px;
+        }
+
+        .modal-header,
+        .modal-content,
+        .modal-footer {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .modal-header {
+            display: none;
+        }
+
+        .modal-content {
+            padding-top: 2rem;
+        }
+
+        &.modal-slide .modal-footer {
+            text-align: center;
+        }
     }
 
-    .modal-header{
-      display: none;
+    /** product info */
+    .addtocart-confirm-container {
+        .product-image-container {
+            width: 100% !important; // the image snippet comes with inline width
+        }
     }
-
-    .modal-content {
-      padding-top:2rem;
-    }
-
-    &.modal-slide .modal-footer {
-      text-align: center;
-    }
-  }
-
-  /** product info */
-  .addtocart-confirm-container {
-    .product-image-container {
-      width: 100% !important; // the image snippet comes with inline width
-    }
-  }
 }
-
-//
-//  Mobile
-//  _____________________________________________
-
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-
-}
-
